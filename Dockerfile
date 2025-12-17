@@ -16,11 +16,11 @@ RUN echo "opcache.enable=1" > /usr/local/etc/php/conf.d/custom.ini \
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-WORKDIR /var/www/empleos
+WORKDIR /var/www/buscar-empleos
 
-RUN mkdir -p /var/www/empleos/storage /var/www/empleos/bootstrap/cache
+RUN mkdir -p /var/www/buscar-empleos/storage /var/www/buscar-empleos/bootstrap/cache
 
-RUN chown -R unit:unit /var/www/empleos/storage bootstrap/cache && chmod -R 775 /var/www/empleos/storage
+RUN chown -R unit:unit /var/www/buscar-empleos/storage bootstrap/cache && chmod -R 775 /var/www/buscar-empleos/storage
 
 COPY . .
 
